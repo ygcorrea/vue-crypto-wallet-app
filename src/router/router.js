@@ -14,14 +14,14 @@ const routes = [
   },
   {
     path: '/send',
-    name: 'send',
+    name: 'Send',
     component: Send,
     meta: { requiresAuth: true },
   },
 
   {
     path: '/login',
-    name: 'login',
+    name: 'Login',
     component: Login,
     meta: { hideAppBar: true },
   },
@@ -39,10 +39,10 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem('token');
+  const token = !!localStorage.getItem('token');
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
   if (requiresAuth && !token) {
-    next('/login');
+    next({ name: 'Login' });
   } else {
     next();
   }

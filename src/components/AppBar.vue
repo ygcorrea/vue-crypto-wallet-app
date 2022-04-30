@@ -24,6 +24,12 @@
 <script>
 export default {
   name: 'AppBar',
+  methods: {
+    onLogoutClick() {
+      localStorage.removeItem('token');
+      this.$router.push({ name: 'Login' });
+    },
+  },
 };
 </script>
 <style lang="scss">
