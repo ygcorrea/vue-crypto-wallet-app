@@ -10,8 +10,8 @@
           </router-link>
         </v-row>
         <v-divider class="divider"></v-divider>
-        <amount :balance="balance" />
-        <v-form ref="form" v-model="validSend">
+        <amount />
+        <v-form ref="formSend" v-model="validSend" lazy-validation>
           <v-container>
             <v-row class="d-flex align-center">
               <v-col>
@@ -72,7 +72,10 @@
                 block
                 large
                 class="primary mb-2"
-                @click="onSendTransaction()"
+                @click="
+                  onSendTransaction();
+                  resetFormValidation();
+                "
                 :loading="loadingStatus"
                 >Send</v-btn
               >
@@ -95,12 +98,11 @@
 
 <script>
 import Amount from '@/components/Amount.vue';
-import walletMixin from '../Wallet/js/walletMixin';
 import sendMixin from '../Send/js/sendMixin';
 
 export default {
   name: 'SendView',
-  mixins: [walletMixin, sendMixin],
+  mixins: [sendMixin],
   components: { Amount },
 };
 </script>

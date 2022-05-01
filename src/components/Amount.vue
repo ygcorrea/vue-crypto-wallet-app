@@ -12,9 +12,10 @@
 </template>
 
 <script>
+import walletMixin from '@/views/Wallet/js/walletMixin';
 export default {
   name: 'AmountAvailable',
-  props: ['balance'],
+  mixins: [walletMixin],
 };
 </script>
 

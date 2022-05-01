@@ -69,6 +69,9 @@ const mutations = {
       state.payloadAuth[key] = null;
     });
   },
+  SET_LOADING(state, loadingData) {
+    state.loadingData = loadingData;
+  },
 };
 
 export default {

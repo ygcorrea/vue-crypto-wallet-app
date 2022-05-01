@@ -10,7 +10,7 @@
           </router-link>
         </v-row>
         <v-divider class="divider"></v-divider>
-        <amount :balance="balance" />
+        <amount />
         <v-progress-linear
           :indeterminate="loadingStatus"
           color="primary"

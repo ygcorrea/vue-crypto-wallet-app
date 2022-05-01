@@ -13,9 +13,20 @@ export default {
   },
   methods: {
     ...mapActions('send', ['getContactsData', 'onSendTransaction']),
+    resetFormValidation() {
+      this.$refs.formSend.resetValidation();
+      this.$refs.formSend.reset();
+      window.location.reload();
+    },
   },
   computed: {
-    ...mapState('send', ['contactsList', 'snackbarColor', 'snackbarMessage', 'payloadData']),
+    ...mapState('send', [
+      'contactsList',
+      'snackbarColor',
+      'snackbarMessage',
+      'payloadData',
+      'loadingStatus',
+    ]),
     ...mapState('wallet', ['transactions', 'balance']),
     validSend: {
       get() {
