@@ -4,10 +4,6 @@
       <v-container justify="center" align="center" class="wallet__container">
         <v-row class="col-12" justify="space-between">
           <h1>Send crypto to contacts</h1>
-          <div>snackbar: {{ this.$store.state.send.snackbar }}</div>
-          <div>validSend: {{ this.$store.state.send.validSend }}</div>
-          <div>payloadData: {{ this.$store.state.send.payloadData }}</div>
-
           <router-link to="/" tag="button">
             <v-icon size="30" class="mb-1" color="#302b2b">mdi-wallet</v-icon>
             <span class="ml-2 btn__text">Wallet</span>
@@ -15,7 +11,7 @@
         </v-row>
         <v-divider class="divider"></v-divider>
         <amount :balance="balance" />
-        <v-form ref="form" v-model="validSend" lazy-validation>
+        <v-form ref="form" v-model="validSend">
           <v-container>
             <v-row class="d-flex align-center">
               <v-col>

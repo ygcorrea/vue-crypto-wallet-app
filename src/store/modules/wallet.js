@@ -41,7 +41,7 @@ const mutations = {
     state.snackbar = showSnackbar;
   },
   SET_SNACKBAR_MSG(state, snackbarMessage) {
-    state.snackbar = snackbarMessage;
+    state.snackbarMessage = snackbarMessage;
   },
 };
 

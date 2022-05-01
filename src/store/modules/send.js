@@ -14,7 +14,7 @@ const state = {
   snackbarColor: null,
   snackbar: false,
   loadingStatus: false,
-  validSend: true,
+  validSend: false,
 };
 
 const actions = {
@@ -36,7 +36,6 @@ const actions = {
         commit('SET_SNACKBAR', true);
         commit('SET_SNACKBAR_MSG', 'Yay! Your transaction has been sended');
         commit('SET_SNACKBAR_COLOR', 'green accent-4');
-        commit('RESET_FORM');
       } catch (error) {
         commit('SET_SNACKBAR', true);
         commit('SET_SNACKBAR_MSG', error.response.data.detail[0].msg);
@@ -48,11 +47,13 @@ const actions = {
           localStorage.removeItem('token');
           router.push({ name: 'Login' });
         }
+
         if (error.response.status === 422) {
           commit('SET_SNACKBAR', true);
           commit('SET_SNACKBAR_MSG', error.response.data.detail[0].msg);
         }
       }
+      commit('RESET_FORM');
     } else {
       commit('SET_SNACKBAR', true);
       commit('SET_SNACKBAR_MSG', 'Fill all required fields before press send');

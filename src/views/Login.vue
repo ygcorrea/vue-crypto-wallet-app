@@ -1,13 +1,13 @@
 <template>
   <v-main class="main__background">
     <v-container fill-height class="justify-center">
-      <v-form ref="form" v-model="isValidForm" lazy-validation class="login__container">
+      <v-form ref="form" v-model="isValidForm" class="login__container">
         <v-img alt="logo" min-width="100" src="../assets/img/wallet.png" contain />
         <span> Sign in to access your crypto wallet </span>
         <div class="login__form">
           <v-text-field
             required
-            v-model="username"
+            v-model="payloadAuth.username"
             label="Login"
             outlined
             rounded
@@ -17,7 +17,7 @@
           ></v-text-field>
           <v-text-field
             required
-            v-model="password"
+            v-model="payloadAuth.password"
             label="Password"
             type="password"
             outlined
@@ -39,15 +39,8 @@
         </div>
       </v-form>
     </v-container>
-    <v-snackbar
-      class="pa-1"
-      color="red lighten-1
-"
-      right
-      top
-      v-model="snackbar"
-    >
-      <span class="snackbar__title"> {{ errorMessage }} </span>
+    <v-snackbar class="pa-1" :color="snackbarColor" right top v-model="snackbar">
+      <span class="snackbar__title"> {{ snackbarMessage }} </span>
 
       <template v-slot:action="{ attrs }">
         <v-btn color="white" text v-bind="attrs" @click="snackbar = false">
@@ -59,7 +52,7 @@
 </template>
 
 <script>
-import loginMixin from './mixins/loginMixin';
+import loginMixin from './mixins/authMixin';
 
 export default {
   name: 'LoginView',
