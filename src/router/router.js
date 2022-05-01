@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Wallet from '../views/Wallet.vue';
-import Login from '../views/Login.vue';
-import Send from '../views/Send.vue';
+import Wallet from '../views/Wallet/Wallet.vue';
+import Login from '../views/Login/Login.vue';
+import Send from '../views/Send/Send.vue';
 
 Vue.use(VueRouter);
 

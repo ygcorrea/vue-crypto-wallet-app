@@ -4,8 +4,8 @@ import { onAuthenticate } from '../../services/authentication';
 const state = {
   isValidForm: true,
   payloadAuth: {
-    username: '',
-    password: '',
+    username: null,
+    password: null,
   },
   snackbar: false,
   snackbarColor: null,

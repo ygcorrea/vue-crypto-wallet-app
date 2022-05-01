@@ -95,8 +95,8 @@
 
 <script>
 import Amount from '@/components/Amount.vue';
-import walletMixin from '../views/mixins/walletMixin';
-import sendMixin from './mixins/sendMixin';
+import walletMixin from '../Wallet/js/walletMixin';
+import sendMixin from '../Send/js/sendMixin';
 
 export default {
   name: 'SendView',

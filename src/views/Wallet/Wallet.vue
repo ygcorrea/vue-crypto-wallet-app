@@ -45,7 +45,7 @@
         </v-timeline>
         <section v-else class="d-flex flex-column align-center empty__state">
           <i class="grey--text"> You haven't made transactions yet </i>
-          <v-img max-width="200" class="mt-8" src="../assets/img/empty-state.svg" />
+          <v-img max-width="200" class="mt-8" src="@/assets/img/empty-state.svg" />
         </section>
       </v-container>
     </section>
@@ -53,7 +53,7 @@
 </template>
 <script>
 import Amount from '@/components/Amount.vue';
-import walletMixin from './mixins/walletMixin';
+import walletMixin from '../Wallet/js/walletMixin';
 
 export default {
   components: { Amount },

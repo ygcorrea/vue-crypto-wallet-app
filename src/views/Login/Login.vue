@@ -2,7 +2,7 @@
   <v-main class="main__background">
     <v-container fill-height class="justify-center">
       <v-form ref="form" v-model="isValidForm" class="login__container">
-        <v-img alt="logo" min-width="100" src="../assets/img/wallet.png" contain />
+        <v-img alt="logo" min-width="100" src="../../assets/img/wallet.png" contain />
         <span> Sign in to access your crypto wallet </span>
         <div class="login__form">
           <v-text-field
@@ -52,17 +52,17 @@
 </template>
 
 <script>
-import loginMixin from './mixins/authMixin';
+import authenticationMixin from '../Login/js/authenticationMixin';
 
 export default {
   name: 'LoginView',
-  mixins: [loginMixin],
+  mixins: [authenticationMixin],
 };
 </script>
 <style lang="scss" scoped>
 .main {
   &__background {
-    background: url(../assets/img/background.jpg) no-repeat center center fixed;
+    background: url(../../assets/img/background.jpg) no-repeat center center fixed;
     background-size: cover;
   }
 }
