@@ -16,7 +16,7 @@ export default {
     resetFormValidation() {
       this.$refs.formSend.resetValidation();
       this.$refs.formSend.reset();
-      // window.location.reload();
+      window.location.reload();
     },
   },
   computed: {
